@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpApiGateway", "YarpApiGateway\YarpApiGateway.csproj", "{10EDC9F6-1B60-4F4B-96EB-E33A11556FD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentService", "StudentService\StudentService.csproj", "{45A95044-0BEF-421B-B361-6DF431BFFBB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoursesService", "CoursesService\CoursesService.csproj", "{13597670-16A2-49D9-9A6A-46FF92608CE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".http", ".http", "{2CDDBC4D-9D66-4347-A1CD-8C9EA1A5B2E6}"
+	ProjectSection(SolutionItems) = preProject
+		.http\requests.http = .http\requests.http
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10EDC9F6-1B60-4F4B-96EB-E33A11556FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10EDC9F6-1B60-4F4B-96EB-E33A11556FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10EDC9F6-1B60-4F4B-96EB-E33A11556FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10EDC9F6-1B60-4F4B-96EB-E33A11556FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A95044-0BEF-421B-B361-6DF431BFFBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A95044-0BEF-421B-B361-6DF431BFFBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A95044-0BEF-421B-B361-6DF431BFFBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A95044-0BEF-421B-B361-6DF431BFFBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13597670-16A2-49D9-9A6A-46FF92608CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13597670-16A2-49D9-9A6A-46FF92608CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13597670-16A2-49D9-9A6A-46FF92608CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13597670-16A2-49D9-9A6A-46FF92608CE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
