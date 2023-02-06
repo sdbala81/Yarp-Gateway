@@ -8,7 +8,7 @@ builder.Configuration.AddYamlFile("appsettings.yaml")
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+// builder.Services.AddControllers();
 
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
@@ -24,7 +24,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // app.UseAuthorization();
-app.UseRouting();
-app.MapControllers();
+// app.UseRouting();
+// app.MapControllers();
 app.MapReverseProxy();
 app.Run();
