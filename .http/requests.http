@@ -1,16 +1,22 @@
-### Get Students -Directly
+### 1 Get Students -Directly
 # @no-logno
 GET http://localhost:8000/students/
 Accept: application/json
 
 
-### Get Courses -Directly
+### 2 Get Courses -Directly
 # @no-logno
 GET http://localhost:6000/courses/
 Accept: application/json
 
 
-### Get Courses -Via Gateway
+### 3 Get Courses -Via Gateway
 # @no-logno
-GET http://localhost:9090/courses/
+GET http://localhost:9090/api/courses/
+Accept: application/json
+
+
+### 4 Get Students -Via Gateway
+# @no-logno
+GET http://localhost:9090/api/students/
 Accept: application/json

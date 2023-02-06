@@ -1,6 +1,10 @@
 using Yarp.ReverseProxy.Transforms;
 
 var builder = WebApplication.CreateBuilder(args);
+var environment = builder.Environment.EnvironmentName;
+
+builder.Configuration.AddYamlFile("appsettings.yaml")
+    .AddYamlFile($"appsettings.{environment}.yaml", optional: false);
 
 // Add services to the container.
 
@@ -17,7 +21,7 @@ if (app.Environment.IsDevelopment())
 {
 }
 
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 // app.UseAuthorization();
 app.UseRouting();

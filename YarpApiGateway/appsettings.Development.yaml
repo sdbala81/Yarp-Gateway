@@ -1,0 +1,26 @@
+---
+ReverseProxy:
+  Routes:
+    StudentsService:
+      ClusterId: StudentsService
+      Match:
+        Path: "/api/students"
+      Transforms:
+        - PathRemovePrefix: "/api"
+    CoursesService:
+      ClusterId: CoursesService
+      Match:
+        Path: "/api/courses"
+      Transforms:
+        - PathRemovePrefix: "/api"
+    
+  Clusters:
+    StudentsService:
+      Destinations:
+        students-service:
+          Address: http://localhost:8000/
+    CoursesService:
+      Destinations:
+        courses-service:
+          Address: http://localhost:6000/
+    
