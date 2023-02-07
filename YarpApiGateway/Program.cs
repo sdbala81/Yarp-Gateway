@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Identity.Web;
-using Yarp.ReverseProxy.Configuration;
 using Yarp.ReverseProxy.Transforms;
+using YarpApiGateway;
 using YarpApiGateway.Error;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,7 +26,7 @@ var services = builder.Services;
 
 services.AddReverseProxy()
     //.LoadFromConfig(configuration.GetSection("ReverseProxy"));
-    .LoadFromMemory(GetRoutes(), GetClusters())
+    .LoadFromMemory(Routes.GetRoutes(), Clusters.GetClusters())
     .AddTransforms(transformBuilderContext => { transformBuilderContext.AddPathRemovePrefix("/api"); });
 
 var app = builder.Build();
@@ -48,39 +46,3 @@ app.UseMiddleware<ErrorHandlingMiddleware>();
 // app.MapControllers();
 app.MapReverseProxy();
 app.Run();
-
-RouteConfig[] GetRoutes()
-{
-    return new[]
-    {
-        new RouteConfig
-        {
-            RouteId = "StudentService", // Forces a new route id each time GetRoutes is called.
-            ClusterId = "StudentService",
-            //AuthorizationPolicy = "Default",
-            Match = new RouteMatch
-            {
-                // Path or Hosts are required for each route. This catch-all pattern matches all request paths.
-                Path = "/api/students"
-            }
-        }
-    };
-}
-
-ClusterConfig[] GetClusters()
-{
-    return new[]
-    {
-        new ClusterConfig
-        {
-            ClusterId = "StudentService",
-            Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
-            {
-                {
-                    "StudentService", new DestinationConfig
-                        { Address = "http://localhost:8000/" }
-                }
-            }
-        }
-    };
-}
