@@ -13,12 +13,34 @@ ReverseProxy:
         Path: "/api/courses"
       Transforms:
         - PathRemovePrefix: "/api"
-    
+    AdmissionService: 
+      ClusterId: AdmissionService
+      Match:
+        Path: "/api/admissions"
+      Transforms:
+        - PathRemovePrefix: "/api"      
+    FacultyService:
+      ClusterId: FacultyService
+      Match:
+        Path: "/api/faculties"
+      Transforms:
+        - PathRemovePrefix: "/api"
+  
+  
+  
   Clusters:
     StudentsService:
       Destinations:
         students-service:
           Address: http://localhost:8000/
+    AdmissionService:
+      Destinations:
+        admission-service:
+          Address: http://localhost:3000/
+    FacultyService:
+      Destinations:
+        faculty-service:
+          Address: http://localhost:3001/   
     CoursesService:
       Destinations:
         courses-service:

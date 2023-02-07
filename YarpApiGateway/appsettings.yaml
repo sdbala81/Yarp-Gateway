@@ -4,3 +4,11 @@ Logging:
     Default: Debug
     Microsoft.AspNetCore: Debug
 AllowedHosts: "*"
+AzureAd:
+  TenantId: 34adcf3e-896a-4368-af8b-65eb20af256e
+  ClientId: 17933b7e-f140-42a5-a699-57ea2bab1725
+  Instance: https://login.microsoftonline.com/
+  Domain: dal@uojmistest.onmicrosoft.com
+  
+  
+  
